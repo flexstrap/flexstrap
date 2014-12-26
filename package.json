@@ -1,0 +1,24 @@
+{
+  "name": "flexstrap",
+  "version": "0.0.0",
+  "description": "Responsive, mobile-first web products using Flexbox.",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flexstrap/flexstrap"
+  },
+  "keywords": [
+    "flexstrap",
+    "flexbox",
+    "stylus"
+  ],
+  "author": "Chris Abrams <mail@chrisabrams.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrisabrams/flexstrap/issues"
+  },
+  "homepage": "https://github.com/chrisabrams/flexstrap"
+}
