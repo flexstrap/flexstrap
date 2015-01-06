@@ -28,6 +28,38 @@
   height 100%
   margin 0 (grid-gutter-width / -2)
 
+  &.align-content-center
+    align-content flex-center
+
+  &.align-content-end
+    align-content flex-end
+    flex-flow row wrap
+
+  &.align-content-space-around
+    align-content space-around
+
+  &.align-content-space-between
+    align-content space-between
+
+  &.align-content-start
+    align-content flex-start
+    flex-flow row wrap
+
+  &.align-items-baseline
+    align-items baseline
+
+  &.align-items-center
+    align-items center
+
+  &.align-items-end
+    align-items flex-end
+
+  &.align-items-start
+    align-items flex-start
+
+  &.align-items-stretch
+    align-items stretch
+
 generateShowHideFor(className)
 
   .hide-{className}
@@ -67,6 +99,18 @@ generateColumnsFor(className)
     // col-xs-push-1, col-xs-push-2, ..., col-xs-push-12
     .col-{className}-push-{num}
       left unit((num / grid-columns) * 100, '%')
+
+.align-self-baseline
+  align-self baseline
+
+.align-self-center
+  align-self center
+
+.align-self-end
+  align-self flex-end
+
+.align-self-start
+  align-self flex-start
 
 // mobile
 @media screen-mq-xs-min
