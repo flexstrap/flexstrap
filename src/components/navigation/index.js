@@ -11,7 +11,7 @@ class NavigationComponent extends Component {
         $menuIcon   = $navigation.find('.icon-menu'),
         $menuToggle = $navigation.find('.navigation-toggle')
 
-    $navigation.on('click', (e) => {
+    $menuIcon.on('click', (e) => {
       e.preventDefault()
 
       if($menuIcon.hasClass('animate-rotate-half')) {
