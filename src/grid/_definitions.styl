@@ -1,0 +1,30 @@
+grid-columns       = 12
+grid-gutter-width  = 30px
+
+screen-xs-min-width = 320px
+screen-sm-min-width = 768px
+screen-md-min-width = 1024px
+screen-lg-min-width = 1280px
+screen-xl-min-width = 1650px
+
+screen-xs-max-width = 480px
+screen-sm-max-width = screen-md-min-width - 1
+screen-md-max-width = screen-lg-min-width - 1
+screen-lg-max-width = screen-xl-min-width - 1
+
+device-iPhone6-portrait-width     = 375px
+device-iPhone6Plus-portrait-width = 414px
+
+mq-xs-min = '(min-width: ' + screen-xs-min-width + ')'
+mq-sm-min = '(min-width: ' + screen-sm-min-width + ')'
+mq-md-min = '(min-width: ' + screen-md-min-width + ')'
+mq-lg-min = '(min-width: ' + screen-lg-min-width + ')'
+mq-xl-min = '(min-width: ' + screen-xl-min-width + ')'
+
+mq-retina = '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)'
+
+screen-mq-xs-min = 'only screen and ' + mq-xs-min
+screen-mq-sm-min = 'only screen and ' + mq-sm-min
+screen-mq-md-min = 'only screen and ' + mq-md-min
+screen-mq-lg-min = 'only screen and ' + mq-lg-min
+screen-mq-xl-min = 'only screen and ' + mq-xl-min

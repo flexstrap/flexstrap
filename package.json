@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/chrisabrams/flexstrap/issues"
   },
-  "homepage": "https://github.com/chrisabrams/flexstrap"
+  "homepage": "https://github.com/chrisabrams/flexstrap",
+  "devDependencies": {
+    "gulp-6to5": "^2.0.0"
+  }
 }
