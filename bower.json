@@ -5,7 +5,7 @@
   "authors": [
     "Chris Abrams <mail@chrisabrams.com>"
   ],
-  "description": "Responsive, mobile-first web products using Flexbox.",
+  "description": "Responsive, mobile-first web products using flexible components.",
   "keywords": [
     "flexstrap",
     "flexbox",
@@ -21,6 +21,7 @@
     "tests"
   ],
   "dependencies": {
-    "normalize.css": "~3.0.2"
+    "normalize.css": "~3.0.2",
+    "jquery": "~2.1.3"
   }
 }
