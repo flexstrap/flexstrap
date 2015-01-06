@@ -44,10 +44,11 @@ generateColumnsFor(className)
 
   for num in (1..grid-columns)
 
-    .col-{className}
-      @extend .base-styles
-      flex 1
-      columnMixin()
+    if num is 1
+      .col-{className}
+        @extend .base-styles
+        flex 1
+        columnMixin()
 
     // col-xs-1, col-xs-2, ..., col-xs-12
     .col-{className}-{num}
