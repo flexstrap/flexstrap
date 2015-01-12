@@ -7,10 +7,14 @@ class NavigationComponent extends Component {
   constructor(options = {}) {
     super(options)
 
-    var $navigation = this.$el,
-        $menuIcon   = $navigation.find('.icon-menu'),
-        $menuToggle = $navigation.find('.navigation-toggle')
+    var $navigation             = this.$el,
+        $menuIcon               = $navigation.find('.icon-menu'),
+        $menuToggle             = $navigation.find('.navigation-toggle'),
+        $navigationDropDown     = $navigation.find('.navigation-dropdown'),
+        $navigationDropDownMenu = $navigation.find('.navigation-dropdown-menu'),
+        $window                 = $(window)
 
+    // Mobile menu icon
     $menuIcon.on('click', (e) => {
       e.preventDefault()
 
@@ -29,6 +33,23 @@ class NavigationComponent extends Component {
       }
 
       $navigation.toggleClass('navigation-open')
+
+    })
+
+    // Small device screen or larger navigation dropdown
+    $('.navigation-dropdown a, .navigation-dropdown li').on('mouseover', (e) => {
+
+      $navigationDropDownMenu.css({left: -$navigationDropDown.offset().left})
+
+    })
+
+    $window.on('resize', (e) => {
+
+      if($navigation.hasClass('navigation-open') && $window.outerWidth() >= 768) {
+
+        $navigationDropDownMenu.css({left: -$navigationDropDown.offset().left})
+
+      }
 
     })
 

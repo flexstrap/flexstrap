@@ -68,37 +68,40 @@ generateShowHideFor(className)
   .show-{className}
     display block
 
-columnMixin()
-  min-height 1px
-  padding 0 (grid-gutter-width / 2)
-
 generateColumnsFor(className)
 
   for num in (1..grid-columns)
+
+    gutter-width = grid-gutter-width
 
     if num is 1
       .col-{className}
         @extend .base-styles
         flex 1
-        columnMixin()
+        min-height 1px
+
+    column-width = unit((num / grid-columns) * 100, '%')
+    opp-width    = "calc(%s + %s)" % (column-width gutter-width)
 
     // col-xs-1, col-xs-2, ..., col-xs-12
     .col-{className}-{num}
       @extend .base-styles
-      flex-basis unit((num / grid-columns) * 100, '%')
-      columnMixin()
+      flex-basis "calc(%s - %s)" % (column-width gutter-width)
+      min-height 1px
+      margin-left (gutter-width / 2)
+      margin-right (gutter-width / 2)
 
     // col-xs-offset-1, col-xs-offset-2, ..., col-xs-offset-12
     .col-{className}-offset-{num}
-      margin-left unit((num / grid-columns) * 100, '%')
+      margin-left opp-width
 
     // col-xs-pull-1, col-xs-pull-2, ..., col-xs-pull-12
     .col-{className}-pull-{num}
-      right unit((num / grid-columns) * 100, '%')
+      right opp-width
 
     // col-xs-push-1, col-xs-push-2, ..., col-xs-push-12
     .col-{className}-push-{num}
-      left unit((num / grid-columns) * 100, '%')
+      left opp-width
 
 .align-self-baseline
   align-self baseline
