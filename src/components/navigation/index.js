@@ -15,7 +15,7 @@ class NavigationComponent extends Component {
         $window                 = $(window)
 
     // Mobile menu icon
-    $menuIcon.on('click', (e) => {
+    $menuToggle.on('click', (e) => {
       e.preventDefault()
 
       if($menuIcon.hasClass('animate-rotate-half')) {

@@ -21,6 +21,11 @@ mq-md-min = '(min-width: ' + screen-md-min-width + ')'
 mq-lg-min = '(min-width: ' + screen-lg-min-width + ')'
 mq-xl-min = '(min-width: ' + screen-xl-min-width + ')'
 
+mq-xs-sm = '(min-width: ' + screen-xs-min-width + ') and (max-width: ' + (screen-sm-min-width - 1) + ')'
+mq-sm-md = '(min-width: ' + screen-sm-min-width + ') and (max-width: ' + (screen-md-min-width - 1) + ')'
+mq-md-lg = '(min-width: ' + screen-md-min-width + ') and (max-width: ' + (screen-lg-min-width - 1) + ')'
+mq-lg-xl = '(min-width: ' + screen-lg-min-width + ') and (max-width: ' + (screen-xl-min-width - 1) + ')'
+
 mq-retina = '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)'
 
 screen-mq-xs-min = 'only screen and ' + mq-xs-min
@@ -28,3 +33,8 @@ screen-mq-sm-min = 'only screen and ' + mq-sm-min
 screen-mq-md-min = 'only screen and ' + mq-md-min
 screen-mq-lg-min = 'only screen and ' + mq-lg-min
 screen-mq-xl-min = 'only screen and ' + mq-xl-min
+
+screen-mq-xs-sm  = 'only screen and ' + mq-xs-sm
+screen-mq-sm-md  = 'only screen and ' + mq-sm-md
+screen-mq-md-lg  = 'only screen and ' + mq-md-lg
+screen-mq-lg-xl  = 'only screen and ' + mq-lg-xl
