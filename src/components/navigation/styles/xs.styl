@@ -2,6 +2,9 @@
   background-color navigation-bg-color
   flex-wrap nowrap
   height navigation-height
+  position fixed
+  top 0
+  width 100%
   z-index 10
 
   .navigation-brand
@@ -69,14 +72,14 @@
         display block
         position relative
 
-      li:not(.navigation-dropdown):hover, li.navigation-dropdown a:hover
-          background-color darken(navigation-bg-color, 5%)
-
         a
           box-sizing border-box
           color navigation-fg-color
           display block
           padding 10px (grid-gutter-width / 2)
+
+      li:not(.navigation-dropdown):hover, li.navigation-dropdown a:hover
+        background-color darken(navigation-bg-color, 5%)
 
 .component-navigation.navigation-open
 

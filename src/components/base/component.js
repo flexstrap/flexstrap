@@ -19,4 +19,10 @@ class Component {
 
 }
 
-try { module.exports = Component } catch(e) { Flexstrap.Component = Component }
+if(typeof window == 'object') {
+  Flexstrap.Component = Component
+}
+
+else {
+  module.exports = Component
+}
