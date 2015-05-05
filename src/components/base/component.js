@@ -19,10 +19,4 @@ class Component {
 
 }
 
-if(typeof window == 'object') {
-  Flexstrap.Component = Component
-}
-
-else {
-  module.exports = Component
-}
+module.exports = Component

@@ -1,6 +1,8 @@
 process.on('uncaughtException', console.log)
 
-var chalk            = require('chalk'),
+var babelify         = require('babelify'),
+    browserify       = require('browserify'),
+    chalk            = require('chalk'),
     clean            = require('gulp-clean'),
     concat           = require('gulp-concat'),
     fs               = require('fs'),
@@ -15,9 +17,9 @@ var chalk            = require('chalk'),
     path             = require('path'),
     runSequence      = require('run-sequence'),
     sh               = require('execSync'),
+    source           = require('vinyl-source-stream'),
     sourcemaps       = require('gulp-sourcemaps'),
-    stylus           = require('gulp-stylus'),
-    to5              = require('gulp-6to5')
+    stylus           = require('gulp-stylus')
 
 var argv     = minimist(process.argv.slice(2)),
     dest     = gulp.dest,
@@ -34,18 +36,38 @@ var watching = function() {
 
 }
 
-gulp.task('b', ['styles'])
+gulp.task('b', ['build', 'styles'])
 
-gulp.task('build-browser', function() {
+gulp.task('build', function(done) {
 
-  src([
-    './src/index.js',
-    './src/components/base/component.js',
-    './src/components/navigation/index.js'
-  ])
-  .pipe(to5())
-  .pipe(concat('flexstrap.js'))
-  .pipe(dest('./dist/js'))
+  var bundler = browserify({
+    bundleExternal: true,
+    cache: {},
+    debug: true,
+    entries: [
+      './src/index.js',
+    ],
+    extensions: [],
+    fullPaths: true,
+    insertGlobals: false,
+    packageCache: {},
+    standalone: 'Flexstrap'
+  })
+
+  bundler
+    .transform(babelify.configure({
+      blacklist: ["useStrict"]
+    }))
+    .bundle()
+    .on('error', function() {
+      console.log(arguments)
+    })
+    .pipe(source('flexstrap.js'))
+    .pipe(gulp.dest('dist/js/'))
+    .on('end', function() {
+      console.log('dist/js/flexstrap.js created.')
+      done()
+    })
 
 })
 

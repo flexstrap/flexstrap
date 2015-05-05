@@ -1,12 +1,4 @@
-var Component;
-
-if(typeof window == 'object') {
-  Component = Flexstrap.Component
-}
-
-else {
-  Component = require('../base/component')
-}
+var Component = require('../base/component')
 
 class NavigationComponent extends Component {
 
@@ -63,10 +55,4 @@ class NavigationComponent extends Component {
 
 }
 
-if(typeof window == 'object') {
-  Flexstrap.NavigationComponent = NavigationComponent
-}
-
-else {
-  module.exports = NavigationComponent
-}
+module.exports = NavigationComponent
